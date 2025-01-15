@@ -1,29 +1,104 @@
+
 {
   "configurations": [
-    {
-      "name": "Debug Application",
-      "cwd": "${workspaceFolder}/app",
-      "executable": "./firmware.elf",
-      "serverpath": "/usr/bin/JLinkGDBServer",
-      "servertype": "jlink",
-      "request": "launch",
-      "type": "cortex-debug",
-      "device": "STM32F401RE",
-      "runToEntryPoint": "main",
-      "interface": "swd",
-      "preLaunchTask": "build_debug"
-    },
-    {
-      "name": "Attach to active",
-      "cwd": "${workspaceFolder}/app",
-      "executable": "./firmware.elf",
-      "serverpath": "/usr/bin/JLinkGDBServer",
-      "servertype": "jlink",
-      "request": "attach",
-      "type": "cortex-debug",
-      "device": "STM32F401RE",
-      "runToEntryPoint": "main",
-      "interface": "swd",
-    }
+    
+    // {
+    //   "name": "WSL - JLink: Debug Application",
+    //   "cwd": "${workspaceFolder}/app",
+    //   "executable": "./firmware.elf",
+    //   "serverpath": "/opt/SEGGER/JLink/JLinkGDBServer",
+    //   "servertype": "jlink",
+    //   "request": "launch",
+    //   "type": "cortex-debug",
+    //   "device": "STM32F446RE",
+    //   "runToEntryPoint": "main",
+    //   "interface": "swd",
+    //   "preLaunchTask": "build_debug"
+    // },
+    // {
+    //   "name": "WSL - JLink: Debug Bootloader",
+    //   "cwd": "${workspaceFolder}/bootloader",
+    //   "executable": "./bootloader.elf",
+    //   "serverpath": "/opt/SEGGER/JLink/JLinkGDBServer",
+    //   "servertype": "jlink",
+    //   "request": "launch",
+    //   "type": "cortex-debug",
+    //   "device": "STM32F446RE",
+    //   "runToEntryPoint": "main",
+    //   "interface": "swd",
+    //   "preLaunchTask": "build_bootloader"
+    // },
+    // {
+    //   "name": "WSL - JLink: Attach to Application",
+    //   "cwd": "${workspaceFolder}/app",
+    //   "executable": "./firmware.elf",
+    //   "serverpath": "/usr/bin/JLinkGDBServer",
+    //   "servertype": "jlink",
+    //   "request": "attach",
+    //   "type": "cortex-debug",
+    //   "device": "STM32F401RE",
+    //   "runToEntryPoint": "main",
+    //   "interface": "swd"
+    // },
+    // {
+    //   "name": "WSL - JLink: Attach to Bootloader",
+    //   "cwd": "${workspaceFolder}/bootloader",
+    //   "executable": "./bootloader.elf",
+    //   "serverpath": "/opt/SEGGER/JLink/JLinkGDBServer",
+    //   "servertype": "jlink",
+    //   "request": "attach",
+    //   "type": "cortex-debug",
+    //   "device": "STM32F401RE",
+    //   "runToEntryPoint": "main",
+    //   "interface": "swd"
+    // },
+      {
+        "name": "WSL - ST-Link: Debug Application",
+        "cwd": "/mnt/c/Users/hcedr/source/repos/stm32f4bare/bare-metal-series/app",
+        "executable": "./firmware.elf",
+        "servertype": "stutil",
+        "request": "launch",
+        "type": "cortex-debug",
+        "device": "STM32F446RE",
+        "runToEntryPoint": "main",
+        "interface": "swd",
+        "preLaunchTask": "build_debug",
+        "gdbPath": "/usr/bin/gdb-multiarch"
+      },
+      {
+        "name": "WSL - ST-Link: Debug Bootloader",
+        "cwd": "${workspaceFolder}/bootloader",
+        "executable": "./bootloader.elf",
+        "servertype": "stutil",
+        "request": "launch",
+        "type": "cortex-debug",
+        "device": "STM32F446RE",
+        "runToEntryPoint": "main",
+        "interface": "swd",
+        "preLaunchTask": "build_bootloader",
+        "gdbPath": "/usr/bin/gdb-multiarch"
+      },
+      {
+        "name": "ST-Link: Attach to Application",
+        "cwd": "${workspaceFolder}/app",
+        "executable": "./firmware.elf",
+        "servertype": "stutil",
+        "request": "attach",
+        "type": "cortex-debug",
+        "device": "STM32F401RE",
+        "runToEntryPoint": "main",
+        "interface": "swd"
+      },
+      {
+        "name": "ST-Link: Attach to Bootloader",
+        "cwd": "${workspaceFolder}/bootloader",
+        "executable": "./bootloader.elf",
+        "servertype": "stutil",
+        "request": "attach",
+        "type": "cortex-debug",
+        "device": "STM32F401RE",
+        "runToEntryPoint": "main",
+        "interface": "swd"
+      }
   ]
 }
