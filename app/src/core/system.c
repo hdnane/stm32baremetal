@@ -1,4 +1,4 @@
-#include "system.h"
+#include "core/system.h"
 
 #include <libopencm3/cm3/systick.h>
 #include <libopencm3/cm3/vector.h>
@@ -21,7 +21,7 @@ static void systick_setup(void) {
 }
 
 uint64_t system_get_ticks(void) {
-  return ticks;
+    return ticks;
 }
 
 void system_setup(void) {
